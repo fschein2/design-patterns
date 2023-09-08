@@ -1,15 +1,26 @@
 package observer;
 
+/**
+ * defines HoleScoreDisplay which implements Observer
+ * @author Fred Schein
+ */
 public class HoleScoreDisplay implements Observer {
     private Subject golfer;
     private int strokes;
     private int par;
 
+    /**
+     * creates an instance of HoleScoreDisplay
+     * @param golfer
+     */
     public HoleScoreDisplay(Subject golfer) {
         this.golfer = golfer;
         golfer.registerObserver(this);
     }
 
+    /**
+     * updates the score for one specific hole for the Golfer
+     */
     public void update(int strokes, int par) {
         this.strokes = 0;
         this.strokes += strokes;
@@ -18,6 +29,10 @@ public class HoleScoreDisplay implements Observer {
 
     }
 
+    /**
+     * creates a string to represent the Golfer's score for one hole
+     * @return String 
+     */
     public String toString() {
         String s = "";
         if ( (strokes - par) > 0 ) {
