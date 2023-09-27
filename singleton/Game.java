@@ -13,22 +13,28 @@ public class Game {
     private int score;
 
     private Game() {
-
+        // needs work
+        rand = new Random();
     }
 
     public static Game getInstance() { 
-        
+        if (game == null) {
+            game = new Game();
+        }
+    
+        return game;
     }
 
     public String getQuestion() {
-
+        // needs work
     }
 
     public boolean isCorrect(String userAnswer) {
-
+        // may need work
+        return currentAnagram.isCorrect(userAnswer);
     }
 
     public int getScore() {
-        
+        return score;
     }
 }
