@@ -5,9 +5,9 @@ package strategy;
  * @author Fred Schein
  */
 public abstract class Player {
-    String firstName;
-    String lastName;
-    boolean offense;
+    private String firstName;
+    private String lastName;
+    private boolean offense;
     protected DefenseBehavior defenseBehavior;
     protected OffenseBehavior offenseBehavior;
 
