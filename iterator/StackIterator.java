@@ -1,8 +1,9 @@
 package iterator;
 
 import java.util.Stack;
+import java.util.Iterator;
 
-public class StackIterator {
+public class StackIterator implements Iterator {
     private Stack<String> items;
     private int position;
 
@@ -11,12 +12,16 @@ public class StackIterator {
     }
 
     public String next() {
-
-        return "";
+        String next = items.get(position);
+        position++;
+        return next;
     }
 
     public boolean hasNext() {
-        
-        return false;
+        if(position >= items.size() || items.get(position) == null) {
+            return false;
+        }
+
+        return true;
     }
 }

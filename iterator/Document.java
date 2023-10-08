@@ -12,8 +12,7 @@ public class Document {
     }
 
     public String makeChange(String change) {
-
-        return "";
+        return "Making change: " + change;
     }
 
     public String undoChange() {
@@ -22,27 +21,23 @@ public class Document {
     }
 
     public boolean canUndo() {
-
-        return false;
+        return !(undoStack.isEmpty());
     }
 
     public String redoChange() {
-
+        
         return "";
     }
 
     public boolean canRedo() {
-
-        return false;
+        return !(redoStack.isEmpty());
     }
 
     public StackIterator getUndoIterator() {
-
         return new StackIterator(undoStack);
     }
 
     public StackIterator getRedoIterator() {
-
         return new StackIterator(redoStack);
     }
 }
